@@ -1,0 +1,24 @@
+{
+  "name": "project-generator-cli",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "tsc --project ./",
+    "dev:start": "npm-run-all build start",
+    "dev": "nodemon --watch src -e ts,ejs --exec npm run dev:start",
+    "start": "node .",
+    "test": "mocha -r ts-node/register test/**/*.spec.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^9.1.2"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.1"
+  }
+}
